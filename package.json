@@ -5,13 +5,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "preview:static": "npx serve@latest out",
+    "deploy:cloudflare": "npm run build && npx wrangler pages deploy out --project-name devtools-rizam"
   },
   "dependencies": {
+    "framer-motion": "^12.40.0",
+    "js-md5": "^0.8.3",
+    "lucide-react": "^1.18.0",
     "next": "16.2.9",
     "react": "19.2.4",
     "react-dom": "19.2.4"
+  },
+  "overrides": {
+    "postcss": "^8.5.15"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
