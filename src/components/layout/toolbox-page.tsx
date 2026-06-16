@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { MobileDrawer } from "./mobile-drawer";
 import { Sidebar } from "./sidebar";
 import { Toast } from "./toast";
+import { ToolActions } from "./tool-actions";
 import { ToolHeader } from "./tool-header";
 import { ToolRenderer } from "@/components/tools/tool-renderer";
 import { useToolboxWorkspace } from "@/hooks/use-toolbox-workspace";
@@ -38,8 +39,6 @@ export function ToolboxPage({ activeTool }: { activeTool: ToolId }) {
         <aside className="hidden h-full w-[22rem] shrink-0 p-4 pr-0 lg:block">
           <Sidebar
             activeTool={activeTool}
-            hydrated={workspaceApi.hydrated}
-            onReset={workspaceApi.resetActiveTool}
           />
         </aside>
 
@@ -49,11 +48,19 @@ export function ToolboxPage({ activeTool }: { activeTool: ToolId }) {
             hydrated={workspaceApi.hydrated}
             isSidebarOpen={isSidebarOpen}
             onExample={workspaceApi.loadExample}
+            onReset={workspaceApi.resetActiveTool}
             onToggleSidebar={() => setIsSidebarOpen((current) => !current)}
           />
 
-          <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4 lg:px-5">
+          <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3 sm:px-4 lg:px-5 lg:py-4">
             <div className="mx-auto w-full max-w-[96rem]">
+              <div className="mb-3 flex justify-end lg:hidden">
+                <ToolActions
+                  compact
+                  onExample={workspaceApi.loadExample}
+                  onReset={workspaceApi.resetActiveTool}
+                />
+              </div>
               <ToolRenderer activeTool={activeTool} {...workspaceApi} />
             </div>
           </div>
@@ -62,10 +69,8 @@ export function ToolboxPage({ activeTool }: { activeTool: ToolId }) {
 
       <MobileDrawer
         activeTool={activeTool}
-        hydrated={workspaceApi.hydrated}
         isOpen={isSidebarOpen}
         onClose={() => setIsSidebarOpen(false)}
-        onReset={workspaceApi.resetActiveTool}
       />
       <Toast message={workspaceApi.toast} />
     </main>

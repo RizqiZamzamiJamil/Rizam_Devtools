@@ -1,36 +1,70 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Info, RotateCcw } from "lucide-react";
+import { Info, X } from "lucide-react";
 import { Panel } from "@/components/ui/panel";
-import { StatusPill } from "@/components/ui/status-pill";
-import { ToolButton } from "@/components/ui/tool-button";
 import { tools } from "@/lib/toolbox/tools";
 import type { ToolId } from "@/lib/toolbox/types";
 
 export function Sidebar({
   activeTool,
-  hydrated,
-  onReset,
+  onClose,
   onNavigate,
 }: {
   activeTool: ToolId;
-  hydrated: boolean;
-  onReset: () => void;
+  onClose?: () => void;
   onNavigate?: () => void;
 }) {
   const pathname = usePathname();
 
   return (
     <Panel className="flex h-full min-h-0 flex-col overflow-hidden">
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/10 px-3 py-3">
+        <Link
+          className="flex min-w-0 items-center gap-3"
+          href="/"
+          onClick={onNavigate}
+        >
+          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-brand-cyan/24 bg-[#05070d] shadow-cyan">
+            <Image
+              alt="Rizam DevTools"
+              className="h-8 w-8 object-contain"
+              height={96}
+              priority
+              src="/brand-mark.png"
+              width={96}
+            />
+          </span>
+          <span className="min-w-0">
+            <span className="block truncate text-[0.66rem] font-black uppercase text-brand-cyan">
+              Developer Tools | Rizam
+            </span>
+            <span className="block truncate font-display text-xl font-black text-white">
+              Rizam DevTools
+            </span>
+          </span>
+        </Link>
+        {onClose ? (
+          <button
+            aria-label="Tutup sidebar toolbox"
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-white/10 bg-white/[0.055] text-white/80 transition hover:border-brand-cyan/40 hover:text-white"
+            onClick={onClose}
+            type="button"
+          >
+            <X aria-hidden="true" className="h-4 w-4" />
+          </button>
+        ) : null}
+      </div>
+
       <div className="shrink-0 border-b border-white/10 px-4 py-3">
         <p className="text-xs font-black uppercase text-white/42">Toolbox</p>
       </div>
 
       <nav
         aria-label="Developer tools"
-        className="min-h-0 flex-1 space-y-1 overflow-y-auto p-2 pb-24"
+        className="min-h-0 flex-1 space-y-1 overflow-y-auto p-2"
       >
         {tools.map((tool) => {
           const Icon = tool.icon;
@@ -63,17 +97,6 @@ export function Sidebar({
           );
         })}
       </nav>
-
-      <div className="shrink-0 border-t border-white/10 bg-brand-panel-soft p-3 shadow-[0_-18px_35px_rgba(0,0,0,0.24)]">
-        <div className="grid gap-2">
-          <StatusPill tone="muted" className="justify-center">
-            {hydrated ? "Local autosave" : "Local workspace"}
-          </StatusPill>
-          <ToolButton icon={RotateCcw} onClick={onReset}>
-            Reset
-          </ToolButton>
-        </div>
-      </div>
     </Panel>
   );
 }
