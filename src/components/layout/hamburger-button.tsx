@@ -11,7 +11,7 @@ export function HamburgerButton({
     <button
       aria-expanded={isOpen}
       aria-label={isOpen ? "Tutup sidebar toolbox" : "Buka sidebar toolbox"}
-      className={`flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1 rounded-lg border border-brand-cyan/38 bg-brand-cyan/10 transition hover:bg-brand-cyan/16 sm:h-10 sm:w-10 lg:hidden ${
+      className={`flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-1 rounded-lg border border-brand-cyan/38 bg-[#0b2a35] transition hover:bg-[#123b47] sm:h-10 sm:w-10 lg:hidden ${
         isOpen ? "is-open" : ""
       }`}
       onClick={onClick}

@@ -25,10 +25,10 @@ export function ToolHeader({
   const ActiveIcon = definition.icon;
 
   return (
-    <header className="sticky top-0 z-20 border-b border-white/10 bg-[#05070d]/82 px-3 py-2.5 backdrop-blur lg:px-5 lg:py-3">
+    <header className="sticky top-0 z-20 border-b border-white/10 bg-black px-3 py-2.5 lg:px-5 lg:py-3">
       <div className="mx-auto flex w-full max-w-[96rem] items-center justify-between gap-3">
         <div className="flex min-w-0 items-start gap-2.5 lg:hidden">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-brand-cyan/24 bg-[#05070d] shadow-cyan sm:h-10 sm:w-10">
+          <span className="grid h-9 w-9 shrink-0 place-items-center sm:h-10 sm:w-10">
             <Image
               alt="Rizam DevTools"
               className="h-7 w-7 object-contain sm:h-7.5 sm:w-7.5"

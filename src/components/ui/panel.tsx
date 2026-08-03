@@ -7,7 +7,7 @@ export function Panel({
 }) {
   return (
     <section
-      className={`rounded-lg border border-white/10 bg-brand-panel-soft shadow-panel backdrop-blur ${className}`}
+      className={`rounded-lg border border-white/10 bg-brand-panel-soft shadow-panel ${className}`}
     >
       {children}
     </section>

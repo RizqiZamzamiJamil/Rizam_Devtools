@@ -27,7 +27,7 @@ export function Sidebar({
           href="/"
           onClick={onNavigate}
         >
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-brand-cyan/24 bg-[#05070d] shadow-cyan">
+          <span className="grid h-11 w-11 shrink-0 place-items-center">
             <Image
               alt="Rizam DevTools"
               className="h-8 w-8 object-contain"
@@ -74,8 +74,8 @@ export function Sidebar({
             <Link
               className={`flex h-12 w-full items-center gap-3 rounded-lg border px-3 text-left transition ${
                 isActive
-                  ? "border-brand-cyan/40 bg-brand-cyan/12 text-white"
-                  : "border-transparent text-white/62 hover:border-white/10 hover:bg-white/[0.055] hover:text-white"
+                  ? "border-brand-cyan/40 bg-[#0b2a35] text-white"
+                  : "border-transparent text-white/62 hover:border-white/10 hover:bg-[#1b222d] hover:text-white"
               }`}
               href={tool.href}
               key={tool.id}

@@ -19,11 +19,11 @@ export function ToolButton({
 }) {
   const variants = {
     primary:
-      "border-brand-cyan/45 bg-brand-cyan/14 text-white hover:border-brand-cyan hover:bg-brand-cyan/22",
+      "border-brand-cyan/45 bg-[#0b2a35] text-white hover:border-brand-cyan hover:bg-[#123b47]",
     neutral:
       "border-white/10 bg-white/[0.055] text-white/82 hover:border-white/25 hover:bg-white/[0.09] hover:text-white",
     danger:
-      "border-brand-coral/35 bg-brand-coral/10 text-brand-coral hover:border-brand-coral/70 hover:bg-brand-coral/18",
+      "border-brand-coral/35 bg-[#361719] text-brand-coral hover:border-brand-coral/70 hover:bg-[#4a1c1f]",
   };
   const sizes = {
     sm: "min-h-8 gap-1.5 px-2.5 text-xs",

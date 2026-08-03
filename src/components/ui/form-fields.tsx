@@ -19,7 +19,7 @@ export function TextArea({
         {label}
       </span>
       <textarea
-        className={`${heightClass} w-full resize-none rounded-lg border border-white/10 bg-[#05070d]/90 p-4 font-mono text-sm leading-6 text-white outline-none transition placeholder:text-white/28 focus:border-brand-cyan/60 focus:ring-2 focus:ring-brand-cyan/15`}
+        className={`${heightClass} w-full resize-none rounded-lg border border-white/10 bg-black p-4 font-mono text-sm leading-6 text-white outline-none transition placeholder:text-white/28 focus:border-brand-cyan/60 focus:ring-2 focus:ring-brand-cyan/15`}
         data-testid={testId}
         onChange={(event) => onChange?.(event.target.value)}
         readOnly={readOnly}
@@ -51,7 +51,7 @@ export function Input({
         {label}
       </span>
       <input
-        className="h-11 w-full rounded-lg border border-white/10 bg-[#05070d]/90 px-3 font-mono text-sm text-white outline-none transition focus:border-brand-cyan/60 focus:ring-2 focus:ring-brand-cyan/15"
+        className="h-11 w-full rounded-lg border border-white/10 bg-black px-3 font-mono text-sm text-white outline-none transition focus:border-brand-cyan/60 focus:ring-2 focus:ring-brand-cyan/15"
         max={max}
         min={min}
         onChange={(event) => onChange(event.target.value)}
@@ -79,7 +79,7 @@ export function Select<T extends string>({
         {label}
       </span>
       <select
-        className="h-11 w-full rounded-lg border border-white/10 bg-[#05070d]/90 px-3 font-mono text-sm text-white outline-none transition focus:border-brand-cyan/60 focus:ring-2 focus:ring-brand-cyan/15"
+        className="h-11 w-full rounded-lg border border-white/10 bg-black px-3 font-mono text-sm text-white outline-none transition focus:border-brand-cyan/60 focus:ring-2 focus:ring-brand-cyan/15"
         onChange={(event) => onChange(event.target.value as T)}
         value={value}
       >

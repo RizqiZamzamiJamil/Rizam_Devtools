@@ -19,7 +19,7 @@ export function MobileDrawer({
         <>
           <motion.button
             aria-label="Tutup sidebar toolbox"
-            className="fixed inset-0 z-40 border-0 bg-black/62 backdrop-blur-[5px] lg:hidden"
+            className="fixed inset-0 z-40 border-0 bg-black/80 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
