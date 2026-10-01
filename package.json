@@ -10,7 +10,12 @@
     "deploy:cloudflare": "npm run build && npx wrangler pages deploy out --project-name devtools-rizam"
   },
   "dependencies": {
-    "framer-motion": "^12.40.0",
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^9.4.0",
+    "@mui/material-nextjs": "^9.4.0",
     "js-md5": "^0.8.3",
     "lucide-react": "^1.18.0",
     "next": "16.2.9",

@@ -1,0 +1,32 @@
+@layer theme, base, mui, components, utilities;
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 96rem;
+}
+
+@layer base {
+  html,
+  body,
+  #__next {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* Keep controls reachable when zoom or the phone keyboard leaves little height. */
+  @media (max-width: 639px) and (max-height: 480px) {
+    .tool-body {
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    .tool-body [data-workspace] {
+      min-height: 280px;
+      flex-shrink: 0;
+    }
+  }
+}
